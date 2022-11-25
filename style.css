@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 {
+    text-align: center;
+}
+.grid {
+    width: 500px;
+    height: 500px;
+    border: solid black 1px;
+    display: grid;
+    /* stops the annoying holding problem */
+    user-select: none;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-container {
+    display: flex;
+    flex-direction: column;
+}
