@@ -79,6 +79,7 @@ const changeColor = (e) => {
 // button functions 
 
 const setMode = (mode) => {
+    highlightBtn(mode)
     currentMode = mode
 }
 const reload = () => {
@@ -99,4 +100,18 @@ const updateSlider = (size) => {
 
 const setColor = (color) => {
     currentColor = color
+}
+const highlightBtn = (mode) => {
+    // remove highlight from all btns
+    rainbowBtn.classList.remove('active')
+    colorBtn.classList.remove('active')
+    eraserBtn.classList.remove('active')
+    // turn on whichever button is sent
+    if (mode === 'rainbow') {
+        rainbowBtn.classList.add('active')
+    } else if (mode === 'color') {
+        colorBtn.classList.add('active')
+    } else if (mode === 'eraser') {
+        eraserBtn.classList.add('active')
+    }
 }

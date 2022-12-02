@@ -1,25 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html {
+    /* footer support for all websites */
+    position: relative;
+    min-height: 100%;
+}   
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-family: 'Poppins', sans-serif;
+}
 h1 {
     text-align: center;
+    padding: 30px 0;
+    font-size: 80px;
 }
 .grid {
     width: 500px;
     height: 500px;
-    border: solid black 1px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     display: grid;
-    /* stops the annoying holding problem */
+    /* stops the annoying mouse holding problem */
     user-select: none;
 }
 .main {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
+    max-width: 1100px;
+    gap: 30px;
 }
 .btn-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 200px;
+}
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: inherit;
+}
+button, 
+input {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    outline: none;  
+    background-color: white;
+}
+/* highlight for the button */
+button.active {
+    background-color: black;
+    color: white;
+}
+button,
+input[type='color'] {
+  transition: transform 0.1s ease-in-out;
+}
+
+/* all buttons get bigger when hovered */
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.05);
+}
+input[type='color']:active {
+    transition: transform 0.05s ease-in-out;
+    transform: scale(1);
+}
+
+/* make color picker smaller */
+input[type='color'] {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 100px;
+    border: none;
+}   
+/* make the color picker circular */
+input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25) ;
+}
+
+/* FOOTER */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+  
+.fa-github {
+    color: var(--primary-dark);
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+    .main {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 850px) {
+    .main {
+        gap: 50px;
+    }
+
+    .settings {
+        width: 150px;
+        gap: 16px;
+    }
+
+    .size-value {
+        margin-bottom: -4px;
+    }
+
+    .grid {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 650px) {
+    .title {
+        font-size: 50px;
+    }
+
+    .main {
+        flex-direction: column-reverse;
+    }
+
+    .grid {
+        width: 300px;
+        height: 300px;
+    }
 }
