@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-html {
-    /* footer support for all websites */
-    position: relative;
-    min-height: 100%;
-}   
 * {
     margin: 0;
     padding: 0;
@@ -143,10 +138,13 @@ footer {
 }
 
 @media (max-width: 650px) {
+    body {
+        padding: 1rem;
+        padding-bottom: 3rem;
+    }
     .title {
         font-size: 50px;
     }
-
     .main {
         flex-direction: column-reverse;
     }
@@ -154,5 +152,8 @@ footer {
     .grid {
         width: 300px;
         height: 300px;
+    }
+    footer {
+        display: none;
     }
 }
